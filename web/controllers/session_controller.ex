@@ -2,7 +2,7 @@ defmodule Peepchat.SessionController do
   use Peepchat.Web, :controller
 
   import Comeonin.Bcrypt
-  import Logger
+  require Logger
 
   alias Peepchat.User
 
@@ -27,7 +27,7 @@ defmodule Peepchat.SessionController do
           |> json(%{access_token: jwt}) # Return token to the client
         false ->
           # Unsuccessful login
-          Logger.warning "User " <> username <> " just failed to login"
+          Logger.warn "User " <> username <> " just failed to login"
           conn
           |> put_status(401)
           |> render(Peepchat.ErrorView, "401.json") # 401
