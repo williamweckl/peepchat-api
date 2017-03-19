@@ -17,6 +17,17 @@ config :peepchat, Peepchat.Endpoint,
   pubsub: [name: Peepchat.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+# Configures Guardian authentication
+config :guardian, Guardian,
+  allowed_algos: ["HS512"], # optional
+  verify_module: Guardian.JWT,  # optional
+  issuer: "Peepchat",
+  ttl: { 30, :days },
+  allowed_drift: 2000,
+  verify_issuer: true, # optional
+  secret_key: System.get_env("GUARDIAN_SECRET") || "hA10bFpxm0yPS5sLlU5xwMBD0b3f5mBlcJO6Bhl459SSFfPZqN0ry3uuBX0B/GvH",
+  serializer: Peepchat.GuardianSerializer
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
