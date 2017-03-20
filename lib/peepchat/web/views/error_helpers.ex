@@ -1,4 +1,4 @@
-defmodule Peepchat.ErrorHelpers do
+defmodule Peepchat.Web.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """

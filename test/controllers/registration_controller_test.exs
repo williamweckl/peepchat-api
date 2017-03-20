@@ -1,5 +1,5 @@
 defmodule Peepchat.RegistrationControllerTest do
-  use Peepchat.ConnCase
+  use Peepchat.Web.ConnCase
 
   alias Peepchat.User
 

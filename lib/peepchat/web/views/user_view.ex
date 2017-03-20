@@ -1,4 +1,4 @@
-defmodule Peepchat.UserView do
+defmodule Peepchat.Web.UserView do
   use Peepchat.Web, :view
   use JaSerializer.PhoenixView
 

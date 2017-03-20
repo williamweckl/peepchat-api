@@ -1,5 +1,5 @@
 defmodule Peepchat.RoomControllerTest do
-  use Peepchat.ConnCase
+  use Peepchat.Web.ConnCase
 
   alias Peepchat.Room
   @valid_attrs %{name: "some content"}

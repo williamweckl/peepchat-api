@@ -1,7 +1,7 @@
-defmodule Peepchat.Endpoint do
+defmodule Peepchat.Web.Endpoint do
   use Phoenix.Endpoint, otp_app: :peepchat
 
-  socket "/socket", Peepchat.UserSocket
+  socket "/socket", Peepchat.Web.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -38,5 +38,5 @@ defmodule Peepchat.Endpoint do
 
   plug CORSPlug
 
-  plug Peepchat.Router
+  plug Peepchat.Web.Router
 end

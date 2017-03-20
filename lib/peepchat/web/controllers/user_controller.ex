@@ -1,4 +1,4 @@
-defmodule Peepchat.UserController do
+defmodule Peepchat.Web.UserController do
   use Peepchat.Web, :controller
 
   alias Peepchat.User
@@ -19,6 +19,6 @@ defmodule Peepchat.UserController do
     |> Guardian.Plug.current_resource
 
     conn
-    |> render(Peepchat.UserView, "show.json-api", data: user)
+    |> render("show.json-api", data: user)
   end
 end

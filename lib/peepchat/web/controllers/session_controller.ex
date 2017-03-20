@@ -1,4 +1,4 @@
-defmodule Peepchat.SessionController do
+defmodule Peepchat.Web.SessionController do
   use Peepchat.Web, :controller
 
   import Comeonin.Bcrypt
@@ -30,7 +30,7 @@ defmodule Peepchat.SessionController do
           Logger.warn "User " <> username <> " just failed to login"
           conn
           |> put_status(401)
-          |> render(Peepchat.ErrorView, "401.json") # 401
+          |> render(ErrorView, "401.json") # 401
       end
     rescue
       e ->
@@ -38,7 +38,7 @@ defmodule Peepchat.SessionController do
         Logger.error "Unexpected error while attempting to login user " <> username
         conn
         |> put_status(401)
-        |> render(Peepchat.ErrorView, "401.json") # 401
+        |> render(ErrorView, "401.json") # 401
     end
   end
 

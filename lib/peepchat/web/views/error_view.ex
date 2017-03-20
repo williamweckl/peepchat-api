@@ -1,4 +1,4 @@
-defmodule Peepchat.ErrorView do
+defmodule Peepchat.Web.ErrorView do
   use Peepchat.Web, :view
 
   def render("401.json", _assigns) do

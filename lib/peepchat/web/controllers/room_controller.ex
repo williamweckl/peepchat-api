@@ -1,4 +1,4 @@
-defmodule Peepchat.RoomController do
+defmodule Peepchat.Web.RoomController do
   use Peepchat.Web, :controller
 
   alias Peepchat.Room
@@ -35,7 +35,7 @@ defmodule Peepchat.RoomController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Peepchat.ChangesetView, "error.json", changeset: changeset)
+        |> render(ChangesetView, "error.json", changeset: changeset)
     end
   end
 
@@ -60,7 +60,7 @@ defmodule Peepchat.RoomController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Peepchat.ChangesetView, "error.json", changeset: changeset)
+        |> render(ChangesetView, "error.json", changeset: changeset)
     end
   end
 

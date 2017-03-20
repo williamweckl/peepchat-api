@@ -1,4 +1,4 @@
-defmodule Peepchat.UserSocket do
+defmodule Peepchat.Web.UserSocket do
   use Phoenix.Socket
 
   ## Channels

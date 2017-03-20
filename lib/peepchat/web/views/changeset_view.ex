@@ -1,4 +1,4 @@
-defmodule Peepchat.ChangesetView do
+defmodule Peepchat.Web.ChangesetView do
   use Peepchat.Web, :view
 
   @doc """

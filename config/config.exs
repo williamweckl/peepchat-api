@@ -10,10 +10,10 @@ config :peepchat,
   ecto_repos: [Peepchat.Repo]
 
 # Configures the endpoint
-config :peepchat, Peepchat.Endpoint,
+config :peepchat, Peepchat.Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "hp5fUQxXBzQOTUZCAJSpQrgOTYoJ/10LUnl5kImuOyhGKYwW+YnUnbSuHOhmTRRK",
-  render_errors: [view: Peepchat.ErrorView, accepts: ~w(json)],
+  render_errors: [view: Peepchat.Web.ErrorView, accepts: ~w(json)],
   pubsub: [name: Peepchat.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

@@ -1,7 +1,8 @@
-defmodule Peepchat.RegistrationController do
+defmodule Peepchat.Web.RegistrationController do
   use Peepchat.Web, :controller
 
   alias Peepchat.User
+  alias Peepchat.Web.UserView
 
   def create(conn, %{"data" => %{"type" => "users",
   	"attributes" => %{"email" => email,
@@ -16,11 +17,11 @@ defmodule Peepchat.RegistrationController do
       {:ok, user} ->
         conn
         |> put_status(:created)
-        |> render(Peepchat.UserView, "show.json-api", data: user)
+        |> render(UserView, "show.json-api", data: user)
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Peepchat.ChangesetView, "error.json", changeset: changeset)
+        |> render(ChangesetView, "error.json", changeset: changeset)
     end
   end
 end
